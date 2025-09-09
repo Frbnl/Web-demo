@@ -1,0 +1,118 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+body {
+    background: #1e1e1e;  
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;             /* vertically centers logo + links */
+    justify-content: space-between;  /* logo left, links right */
+    padding: 13px 20px;
+    background: rgba(17, 17, 17, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow: visible;
+    display: flex;
+}
+
+#logo {
+    width: 60px;
+    text-align: left;
+}
+
+/* Navbar links + dropdown buttons */
+.navbar a,
+.dropdown .dropbtn {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    margin: 0 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for links and dropdown buttons */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    font-weight: bold;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    /* 🔥 Frosted glass effect */
+    background: rgba(255, 255, 255, 0.08); /* light transparent bg */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+    border-radius: 10px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    min-width: 180px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background 0.3s ease;
+}
+
+/* Hover on dropdown links */
+.dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Even spacing between nav links */
+.nav-links a, 
+.dropdown {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nav-links {
+    display: flex;
+    align-items: center;   /* keeps all links + dropdowns aligned */
+    justify-content: flex-end; /* push them to the right */
+    gap: 20px;             /* even spacing between each item */
+}
+
+
