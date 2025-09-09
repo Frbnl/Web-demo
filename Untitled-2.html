@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000000;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 500px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            column-gap: 90px;
+            row-gap: 50px;
+            padding: 20px;
+        }
+        header {
+            background-color: #ffffff;
+            color: white;
+            padding: 10px 30px;
+            text-align: left;
+            font-weight: bold;
+            width: 100vw;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        nav a {
+            color: #0D1B2A;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        nav a:last-child {
+            margin-right: 0;
+        }
+        .bike-section {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 90px;
+            row-gap: 50px;
+            padding: 20px;
+        }
+        .box {
+            width: 300px;
+            height: 260px;
+            font-size: 25px;
+            color: #fff;
+            border: 2px solid white;
+            border-radius: 12px;
+            box-shadow: 0 10px 16px rgba(0,0,0,0.15);
+            padding: 5px;
+        }
+    </style>
+    <script src="bikescript.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Tour_de_France_logo_%28black_background%29.svg/2560px-Tour_de_France_logo_%28black_background%29.svg.png" alt="Tour de France" style="height: 1.5em; width: 100px; height: auto;">
+            <nav>
+                <a href="TDF Home.html">Home</a>
+                <a href="Untitled-2.html">Bikes</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bike-section" style="margin-top: 60px;">
+        <div>
+            <div class="box" style="padding: 0; overflow: hidden; position: relative;">
+                <div id="slider" style="width: 100%; height: 100%; position: relative;">
+                    <img src="S-works sl8 1.jpg" 
+                         alt="S-Works Tarmac SL 8 LTD" 
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 0.5s;">
+                    <img src="S-works Sl8 2.png"
+                         alt="S-Works Tarmac SL 8 LTD 2"
+                         style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s;">
+                    <a href="https://www.specialized.com/us/en/s-works-tarmac-sl8-ltd-red-bull-2025-tdf/p/4293988?color=5467505-4293988"
+                       target="_blank"
+                       style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0) 100%); color: #ffffff; text-align: center; text-decoration: none; font-size: 1.1em; padding: 24px 0 10px 0; min-height: 60px;">
+                        <b>S-Works Tarmac SL 8 LTD</b>
+                    </a>
+                    <button onclick="prevSlide()" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer;">&#8592;</button>
+                    <button onclick="nextSlide()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer;">&#8594;</button>
+                </div>
+            </div>
+            <script>
+                const sliderImages = [
+                    "https://bikebox.ch/wp-content/uploads/2024/10/bikebox_specialized-sl8-build-lq-91.jpg",
+                    "https://www.specialized.com/_ui/responsive/theme-specialized/images/bikes/2024/tarmac-sl8-hero.jpg"
+                ];
+                let currentSlide = 0;
+                const imgs = document.querySelectorAll('#slider img');
+                function showSlide(idx) {
+                    imgs.forEach((img, i) => {
+                        img.style.opacity = (i === idx) ? "1" : "0";
+                    });
+                }
+                function prevSlide() {
+                    currentSlide = (currentSlide - 1 + sliderImages.length) % sliderImages.length;
+                    showSlide(currentSlide);
+                }
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % sliderImages.length;
+                    showSlide(currentSlide);
+                }
+                
+                // Optional: auto-slide
+                // setInterval(nextSlide, 4000);
+            </script>
+        </div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </section>
+</body>
+</html>
