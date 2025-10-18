@@ -94,7 +94,6 @@ aside ul{
 
 }
 .contact-form label {
-
   color: white;
 }
 .contact-form input, .contact-form textarea {
@@ -120,4 +119,39 @@ aside ul{
   margin: 20px auto;
   max-width: 600px;
   transition: box-shadow 0.3s ease;
+}
+/*Sejarah*/
+.hal-sejarah h2{
+    font-family: 'mdserif';
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);    
+}
+.sejarah-hero {
+  border: solid 1px rgb(50, 50, 50);
+  background: rgba(33, 33, 33, 0.5);
+  box-shadow: 0 8px 30px rgba(224, 224, 224, 0.08);
+}
+.sejarah-hero .hero-inner h1 {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Timeline */
+.timeline li {
+  border-radius: 10px;
+  border-left: 6px solid goldenrod;
+  background: rgba(49, 49, 49, 0.5);
+  box-shadow: 0 8px 30px rgba(224, 224, 224, 0.08);
+}
+.timeline li time {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+.timeline .event h3 {
+  line-height: 0.1;
+  font-size: 18px;
+}
+.timeline .event p { 
+    margin: 0; 
+    color: rgb(209, 209, 209); 
+    font-size: 14px; 
 }
